@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// my rectangle
 module.exports = class Rectangle{
     constructor(w,h) {
         if (w > 0 && h >0) { [this.width, this.height] = [w, h]} 
@@ -11,7 +12,7 @@ module.exports = class Rectangle{
 };
  console. error("error message")
 
-
+import mys 
 
 
 
