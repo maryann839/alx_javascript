@@ -10,7 +10,9 @@ module.exports = class Rectangle{
         console.log("x".repeat(this.width));
         }
 };
- console. error("error message")
+
+// Writing to stderr using console.error
+console.error('This is an error message.');
 
 
 
