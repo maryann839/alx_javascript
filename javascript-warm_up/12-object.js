@@ -1,4 +1,8 @@
-const myNumber = 12
+const object = {
+   type: 'object',
+   value: 12
+}
+console.log(object)
 
-const updateNumber = 89
-console.log(updateNumber)
+object.value = 89
+console.log(object)
