@@ -12,7 +12,7 @@ module.exports = class Rectangle{
 };
  console. error("error message")
 
-import mys 
+
 
 
 
