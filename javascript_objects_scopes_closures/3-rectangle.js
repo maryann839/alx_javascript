@@ -9,6 +9,8 @@ module.exports = class Rectangle{
         console.log("x".repeat(this.width));
         }
 };
+ console. error("error message")
+
 
 
 
