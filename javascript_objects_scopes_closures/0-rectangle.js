@@ -1,3 +1,2 @@
-class Rectangle{}
+module.exports = class Rectangle{}
 
-const myRectangle = new Rectangle()
