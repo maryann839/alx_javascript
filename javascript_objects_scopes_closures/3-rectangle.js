@@ -11,7 +11,7 @@ module.exports = class Rectangle{
 };
 
 // Writing stderr using console.error
-console.error();
+console.error ()
 
 
 
