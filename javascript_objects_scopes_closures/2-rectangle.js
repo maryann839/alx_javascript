@@ -2,8 +2,8 @@
 
 module.exports = class Rectangle{
     constructor(w,h) {
-       this.width = (typeof w === 'number' && w > 0) ? w : undefined;
-       this.height = (typeof h === 'number' && h > 0) ? h : undefined;
+        if (w > 0 && h >0) { [this.width, this.height] = [w, h]}
+        
     }
 }
 
