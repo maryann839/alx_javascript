@@ -1,14 +1,13 @@
 #!/usr/bin/node
 
 const request = require("request");
-const url = `https://swapi.dev/api/films`;
+const id = process.argv[2];
+const endpoint = 'https://swapi-api.alx-tools.com/api/films/' + id;
+        
 
-request.get(url, function (error, response, body) {
-    // console.log("code:", response.statusCode);
+request.get(endpoint, function (error, response, body) {
     const Object_body = JSON.parse(body);
-
-    Object_body.results.forEach(function (film) {
-        console.log(film.title);
-    })
+    console.log(Object_body.title);
 });
-    
+
+
