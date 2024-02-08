@@ -1,9 +1,15 @@
 #!/usr/bin/node
 
-const req = require("request");
-const url = 'https://swapi.dev/api/films';
+const request = require("request")
+const endpoint = 'https://swapi.dev/api/films/1';
 
-req.get(url, {encoding : 'utf-8'})
-.on('response', response =>{
-    console.log("code:", response.statusCode);
-})
+request(endpoint, function (error, response) {
+    console.log("code:", response.statusCode)
+});
+    
+
+
+
+
+
+
