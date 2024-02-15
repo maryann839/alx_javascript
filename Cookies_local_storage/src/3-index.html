@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+  <title>Cookies Project</title>
+
+  <style>
+     body{
+        margin-top: 10%;
+     }
+
+     h2{
+        font-family:  ' sans-serif';
+        font-weight: bold;
+        font-size: 3rem;
+     } 
+   
+     input{
+        padding: 10px;
+        
+     }
+
+     .input-group{
+        position: relative;
+        padding: 5px;
+        
+     }
+     
+     label{
+        height: 100%;
+        position: absolute;
+        padding: 10px; 
+        font-size-adjust: inherits;
+        color: cadetblue;
+     }
+
+     button{
+        border-radius: 10px;
+        border: none;
+        font-size: large;
+        padding: 10px; 
+        box-shadow: solid black;
+        font-weight: 500;
+        font-style: unset;
+     }
+
+     #login {
+        display: flex;
+        flex-direction: column;
+     }
+
+  
+   </style>
+</head>
+<body>
+  <div id="login">
+    <h2>Login to the website</h2>
+    <div class="hero">
+        <form>
+            <div class="input-group">
+                <label for="firstname">Firstname</label>
+                <input type="text" id="firstname">
+
+                <label for="email">Email</label>
+                <input type="text" id="email">
+                <button onclick="logme">Log me in</button>
+            </div>
+        </form>
+    </div>
+  </div>
+  <script>
+    function setCookies(){
+        const firstnameValue  = document.getElementById('firstname').value;
+        const emailValue  = document.getElementById('email').value;
+    
+        var expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 10);
+
+        document.cookie = `firstname=${firstnameValue}; expires=${expirationDate.toUTCString()}`;
+        document.cookie = `email=${emailValue}; expires=${expirationDate.toUTCString()}`;
+    };
+
+    function showCookies(){
+        const cookiesParagraph = document.createElement('p');
+        cookiesParagraph.innerHTML = `Cookies: ${document.cookie}`;
+        document.body.appendChild(cookiesParagraph);
+    }
+
+    function getCookie(cookieName) {
+        var name = cookieName + '=';
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var cookieArray = decodedCookie.split(';');
+
+        for (var i = 0; i < cookieArray.length; i++) {
+            var cookie = cookieArray[i].trim();
+            if (cookie.indexOf(name) == 0) {
+                return cookie.sustring(name.lenght, cookie.length);
+            }
+        }
+        return '';
+    }
+    
+    function showForm() {
+       document.getElementById('welcomeMessage')?.remove();
+       document.getElementById('login').style.display = 'flex';
+
+    }
+    
+    function hideForm() {
+        document.getElementById('login').style.display = 'none';
+    }
+
+    function deleteCookiesAndShowForm() {
+        document.cookie = 'firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+        document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+        showForm();
+    }
+
+    function showWelcomeMessageOrForm(){
+        const firstname = getCookie('firstname');
+        if (firstname) {
+            document.body.innerHTML = `<h1 id="welcomeMessage">Welcome ${firstname} <a href="#" onclick="deleteCookiesAndShowForm(); hideForm(); showForm();">(logout)</a></h1>`;
+        } else {
+            showForm();
+        }
+    }
+    
+    showWelcomeMessageOrForm()
+  </script>
+</body>
+</html>

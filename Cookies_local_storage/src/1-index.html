@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+  <title>Cookies Project</title>
+
+  <style>
+     body{
+        margin-top: 10%;
+     }
+
+     h1{
+        font-family:  ' sans-serif';
+        font-weight: bold;
+        font-size: 3rem;
+     } 
+   
+     input{
+        padding: 10px;
+        
+     }
+
+     .input-group{
+        position: relative;
+        padding: 5px;
+        
+     }
+     
+     label{
+        height: 100%;
+        position: absolute;
+        padding: 10px; 
+        font-size-adjust: inherits;
+        color: cadetblue;
+     }
+
+     button{
+        border-radius: 10px;
+        border: none;
+        font-size: large;
+        padding: 10px; 
+        box-shadow: solid black;
+        font-weight: 500;
+        font-style: unset;
+     }
+
+  
+   </style>
+</head>
+<body>
+  <h1>Login to the website</h1>
+  <div class="hero">
+    <form>
+        <div class="input-group">
+            <label for="firstname">Firstname</label>
+            <input type="text" id="firstname">
+
+            <label for="email">Email</label>
+            <input type="text" id="email">
+            <button onclick="logme">Log me in</button>
+        </div>
+    </form>
+  </div>
+
+  <h1>Cookies</h1>
+  <button onclick="showcookies">Show the cookies</button>
+
+  <script>
+    function setCookies(){
+        const firstnameValue  = document.getElementById('firstname').value;
+        const emailValue  = document.getElementById('email').value;
+    
+        var expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 10);
+
+        document.cookie = `firstname=${firstnameValue}; expires=${expirationDate.toUTCString()}`;
+        document.cookie = `email=${emailValue}; expires=${expirationDate.toUTCString()}`;
+    };
+
+    // function showCookies(){
+    //     const cookiesParagraph = document.createElement('p');
+    //     cookiesParagraph.innerHTML = `Cookies: ${document.cookie}`;
+    //     document.body.appendChild(cookiesParagraph);
+    // }
+
+    
+  </script>
+</body>
+</html>
