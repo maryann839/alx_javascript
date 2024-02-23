@@ -13,7 +13,7 @@ module.exports = class Rectangle{
    
     print() {
         for (let i = 0; i <this.height; i += 1) 
-        console.log("x".repeat(this.width));
+        console.log("X".repeat(this.width));
      }
     
     rotate() {
