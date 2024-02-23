@@ -12,9 +12,9 @@ module.exports = class Rectangle{
      
    
     print() {
-        for (let i = 0; i <this.height; i += 1);
-        console.log("X".repeat(this.width));
-     };
+        for (let i = 0; i <this.height; i += 1) 
+        console.log("x".repeat(this.width));
+     }
     
     rotate() {
             [this.width, this.height] =  [this.width, this.height]
