@@ -58,13 +58,13 @@
 
             <label for="email">Email</label>
             <input type="text" id="email">
-            <button onclick="logme">Log me in</button>
+            <button onclick="setCookies">Log me in</button>
         </div>
     </form>
   </div>
 
   <h1>Cookies</h1>
-  <button onclick="showcookies">Show the cookies</button>
+  <button onclick="showCookies()">Show the cookies</button>
 
   <script>
     function setCookies(){
@@ -78,11 +78,11 @@
         document.cookie = `email=${emailValue}; expires=${expirationDate.toUTCString()}`;
     };
 
-    // function showCookies(){
-    //     const cookiesParagraph = document.createElement('p');
-    //     cookiesParagraph.innerHTML = `Cookies: ${document.cookie}`;
-    //     document.body.appendChild(cookiesParagraph);
-    // }
+    function showCookies(){
+        const cookiesParagraph = document.createElement('p');
+        cookiesParagraph.innerHTML = `Cookies: ${document.cookie}`;
+        document.body.appendChild(cookiesParagraph);
+    }
 
     
   </script>
